@@ -12,6 +12,7 @@
     "check": "biome check",
     "ci": "biome ci",
     "ci:fix": "biome check --fix --diagnostic-level=error",
+    "updates": "npm-check-updates",
     "prepublishOnly": "run-p build ci",
     "postpublish": "pnpm version --no-git-tag-version patch"
   },
@@ -51,10 +52,11 @@
     "@types/uuid": "^10.0.0",
     "esbuild": "^0.24.2",
     "glob": "^11.0.0",
+    "npm-check-updates": "^17.1.12",
     "terser": "^5.37.0",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
-    "vite": "^6.0.5"
+    "vite": "^6.0.6"
   },
   "packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
 }

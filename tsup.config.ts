@@ -10,7 +10,7 @@ export default defineConfig((config) => ({
   keepNames: true,
   bundle: true,
   tsconfig: 'tsconfig.json',
-  target: 'node20',
+  target: 'node22',
   format: ['esm', 'cjs'],
   outDir: 'dist',
 }));
