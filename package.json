@@ -1,0 +1,60 @@
+{
+  "name": "@shellicar/core-build",
+  "version": "0.0.1",
+  "description": "Build system plugins for versioning and graphql loading",
+  "type": "module",
+  "scripts": {
+    "build": "tsup-node",
+    "dev": "tsup-node --watch",
+    "test": "node --experimental-strip-types --test test/*.spec.ts",
+    "lint": "biome lint",
+    "format": "biome format",
+    "check": "biome check",
+    "ci": "biome ci",
+    "ci:fix": "biome check --fix --diagnostic-level=error",
+    "prepublishOnly": "run-p build ci",
+    "postpublish": "pnpm version --no-git-tag-version patch"
+  },
+  "keywords": ["esbuild", "vite", "plugins", "graphql", "version"],
+  "author": "Stephen Hellicar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shellicar/core-build/issues"
+  },
+  "homepage": "https://github.com/shellicar/core-build#readme",
+  "exports": {
+    "./buildLogger": {
+      "types": "./src/buildLogger.ts",
+      "import": "./dist/buildLogger.js",
+      "require": "./dist/buildLogger.cjs"
+    },
+    "./graphqlLoader": {
+      "types": "./src/graphqlLoader.ts",
+      "import": "./dist/graphqlLoader.js",
+      "require": "./dist/graphqlLoader.cjs"
+    },
+    "./gitVersion": {
+      "types": "./src/gitVersion.ts",
+      "import": "./dist/gitVersion.js",
+      "require": "./dist/gitVersion.cjs"
+    },
+    "./config": {
+      "types": "./src/config.ts",
+      "import": "./dist/config.js",
+      "require": "./dist/config.cjs"
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@luckycatfactory/esbuild-graphql-loader": "^3.8.1",
+    "@types/node": "^22.10.2",
+    "@types/uuid": "^10.0.0",
+    "esbuild": "^0.24.2",
+    "glob": "^11.0.0",
+    "terser": "^5.37.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  },
+  "packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
+}
